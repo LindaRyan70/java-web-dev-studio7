@@ -17,6 +17,20 @@ public abstract class BaseDisc {
         remainingCapacity = spaceLeft();
     }
 
+    /*  EXTRA - When experimenting to add DVD-Class-only fields, I needed to add this empty constructor to create a
+    custom constructor in DVD Class to allow for creating a DVD obj with only the DVD Class rating field in Main:
+    DVD dvdB = new DVD(aRating: "Also Excellent");   */
+    public BaseDisc() {
+    }
+
+    /* EXTRA - Added Getter in order to print individual DVD Class or CD Class name values from the new Object instances
+     on Main.Could add other getters for each BaseDisc Class field, as needed for access. */
+    public String getName() {
+        return name;
+    }
+
+
+
     private int checkCapacity(int dataWritten) {
         if (storageCapacity < dataWritten){
             return storageCapacity;
